@@ -19,17 +19,16 @@ function MealsOverviewScreen({ route, navigation }) {
     (category) => category.id === catId
   ).title;
 
+  // setting option dynamicly with uselayoutEffect
   useLayoutEffect(() => {
     const categoryTitle = CATEGORIES.find(
       (category) => category.id === catId
     ).title;
+    // set option method
     navigation.setOptions({
       title: categoryTitle,
     });
   }, [navigation, catId]);
-  navigation.setOptions({
-    title: categoryTitle,
-  });
 
   function renderMealItem(itemData) {
     const item = itemData.item;
@@ -39,6 +38,7 @@ function MealsOverviewScreen({ route, navigation }) {
       affordability: item.affordability,
       complexity: item.complexity,
       duration: item.duration,
+      id: item.id,
     };
     return (
       <View>
