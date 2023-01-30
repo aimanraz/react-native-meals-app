@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { createContext } from "react";
+import { useState, createContext } from "react";
 
 // act like a blueprint of the context
 // even there is no value here, it help provide an autocompletion later in IDE
